@@ -30,7 +30,13 @@ def main():
     # (alias, full, allow_when_oneof, incompatible_with)
     cmds = [('k', 'kubectl', None, None)]
 
-    globs = [('sys', '--namespace=kube-system', None, ['sys'])]
+    globs = [
+        ('sys', '--namespace=kube-system', None, ['sys']),
+        ('m', '--namespace=mrbilit', None, None),
+        ('md', '--namespace=mrbilit-dev', None, None),
+        ('mt', '--namespace=mrbilit-test', None, None),
+        ('i', '--namespace=infra', None, None),
+    ]
 
     ops = [
         ('a', 'apply --recursive -f', None, None),
